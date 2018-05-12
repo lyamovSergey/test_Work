@@ -1,0 +1,144 @@
+@font-size: 24px;
+@border: 1px solid rgba(48, 48, 48, 0.2); 
+.padding(@top, @bottom){
+	padding-top: @top;
+	padding-bottom: @bottom;
+}
+.screenLarge(@rules){
+	@media screen and (max-width: 1229px){
+		@rules();
+	}
+}
+.screenMiddle(@rules){
+	@media screen and (max-width: 768px){
+		@rules();
+	}
+}
+.screen520(@rules){
+	@media screen and (max-width: 520px){
+		@rules();
+	}
+}
+
+
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Lato', sans-serif;
+	box-sizing: border-box;
+}
+.container{
+	max-width: 1250px;
+	margin: 0 auto;
+}
+header{
+	position: relative;
+	width: 100%;
+	min-height: 773px;
+	background-image: url(../img/headerBG.jpg);
+	background-size: cover;
+	.screenMiddle({
+			   	background-position-x: -175px;	
+			});
+
+	h1{
+		width: 73%;
+		padding-top: 57px;
+		margin: 0 auto;
+		color: #fff;
+		text-align: center;
+		font-size: 52px;
+		.screenLarge({
+			font-size: 40px;	
+			});
+	}
+	.header__button{
+		display: block;
+		padding: 18px 0px;
+    	width: 270px;
+		margin: auto;
+		margin-top: 477px;
+		width: 275px;
+		border-radius: 5px;
+		background-color: #ff8800;
+		font-size: @font-size;
+		text-decoration: none;
+		text-align: center;
+		color: #fff;
+	}
+	.header__button:hover{
+		text-shadow: 0px 0px 2px #fff;
+		box-shadow: 0px 0px 2px #fff;
+	};
+	
+}
+main{
+	.title{
+		display: flex;
+		justify-content: center;
+		width: 79%;
+    	margin: 0 auto;
+		.padding(93px, 18px);
+		border-bottom: @border;
+		h2{
+			font-size: @font-size + 10px;
+			color: #0073ae;
+			font-weight: 400;
+		    .padding(6px, 15px);
+		}
+		div{
+			text-align: center;
+		}
+		.title__leftCol{
+			border-right: @border;
+		}
+		.discription-block__leftCol{
+			width: 300px;
+		}
+		.discription-block__rightCol{
+			width: 275px;
+		}
+
+	}
+	.wrapperSVG{
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		margin: 0 auto;
+		padding: 75px 20px 0px 0px;
+		.screenMiddle({
+			width: 100%;
+			padding: 75px 0px 0px 0px;
+			});
+
+	}
+	.discription-block{
+		.title;
+		justify-content: space-around;
+		.screenMiddle({
+			justify-content: space-between;
+			width: 100%;
+			});
+		align-items: center;
+		.padding(65px, 64px);
+		p{
+			font-size: @font-size - 6px;
+			color: #585858;
+		}
+		img{
+			width: 40px;
+			height: 40px;
+		}
+	}
+	.wrapperSVG2{
+		.wrapperSVG();
+	    padding: 84px 6px 0px 0px;
+	    .screenMiddle({
+			width: 100%;
+			padding: 84px 0px 0px 0px;
+			});
+	}
+	.discription-block_borderBottom{
+		border: none;
+	}
+}
